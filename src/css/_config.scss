@@ -1,0 +1,21 @@
+/* Variables and mixins */
+
+$theme-background-color: #d9d9d9;
+$theme-gray: gray;
+$header-white: #f2f2f2;
+$theme-font-size: 0.94em;
+$background-img: url('./img/bw.jpg');
+$box-clamped-width: clamp(400px, 50vw, 700px);
+
+@mixin flexing-box($orientation, $x, $y) {
+    display: flex;
+    flex-flow: $orientation nowrap;
+    @if $orientation == column {
+        justify-content: $y;
+        align-items: $x;
+    }
+    @else if $orientation == row {
+        justify-content: $x;
+        align-items: $y;
+    }
+}

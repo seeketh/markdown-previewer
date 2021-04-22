@@ -1,0 +1,52 @@
+/* Styling Markdown Preview App */
+
+@import 'config';
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    @include flexing-box(column, center, flex-start);
+    background: $theme-background-color $background-img no-repeat;
+}
+
+.display {
+    box-sizing: border-box;
+    width: $box-clamped-width;
+    font-size: $theme-font-size;
+}
+
+.editor-title {
+    @extend .display;
+    padding: 5px 5px 5px 10px;
+    margin-bottom: 0;
+    font-weight: 500;
+    text-transform: capitalize;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: $theme-gray;
+    color: $header-white;
+}
+
+.editor {
+    @extend .display;
+    padding: 10px;
+    background-color: rgba($color: $header-white, $alpha: 0.7);
+    overflow: scroll;
+    border: 2px solid $theme-gray;
+    margin-top: 0;
+    outline: none;
+}
+
+.preview-title {
+    @extend .editor-title;
+    margin-top: 40px;
+}
+
+.preview {
+    height: clamp(400px, 60vh, 700px);
+    @extend .editor;
+}
+
+.editor-box {
+    margin-top: 20px;
+}
